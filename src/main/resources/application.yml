@@ -28,3 +28,6 @@ info:
     profile: ${spring.profiles.active}
   serverInfo:
     port: ${server.port}
+
+application:
+  allow-get-accounts: ${accounts.allow-get-accounts}
