@@ -1,7 +1,6 @@
 package com.kodilla.accounts.domian;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 
 @Getter
