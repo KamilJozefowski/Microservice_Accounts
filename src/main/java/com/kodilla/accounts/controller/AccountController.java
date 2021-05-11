@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RefreshScope
 @Slf4j
 @CrossOrigin(origins = "*")
@@ -26,12 +28,12 @@ public class AccountController {
     private final AccountMapper accountMapper;
 
     @GetMapping
-    public AccountDto getAccounts(@RequestParam("customerId") Long customerId) throws TaskNotFoundException {
+    public List<AccountDto> getAccounts(@RequestParam("customerId") Long customerId) throws TaskNotFoundException {
         log.info("Get account for costumerID: {}", customerId);
         if(!allowGetAccounts){
             log.info("Getting accounts is disabled.");
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Getting accounts is disabled.");
         }
-        return accountMapper.mapToAccountDto(dbService.getAccount(customerId).orElseThrow(TaskNotFoundException::new));
+        return accountMapper.mapToListAccountDto(dbService.getAccountByCustomerId(customerId));
     }
 }

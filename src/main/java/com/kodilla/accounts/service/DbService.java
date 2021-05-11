@@ -5,6 +5,7 @@ import com.kodilla.accounts.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -12,7 +13,11 @@ import java.util.Optional;
 public class DbService {
     private final AccountRepository accountRepository;
 
-    public Optional<Account> getAccount(final Long taskId){
+    public Optional<Account> getAccount(final Long taskId) {
         return accountRepository.findById(taskId);
+    }
+
+    public List<Account> getAccountByCustomerId(final Long customerId){
+        return accountRepository.findAllByCustomerId(customerId);
     }
 }

@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @NoArgsConstructor
 @Getter
@@ -19,6 +20,10 @@ public class Account {
     @GeneratedValue
     @Column(name = "ID")
     private Long id;
+
+    @Column(name = "CUSTOMER_ID")
+    @NotNull
+    private Long customerId;
 
     @Column(name = "NRB")
     private String nrb;
