@@ -34,4 +34,36 @@ public class Account {
     @Column(name = "AVAILABLE_FUNDS")
     private Double availableFunds;
 
+    public static class Builder {
+        private Long id;
+        private Long customerId;
+        private String nrb;
+        private String currency;
+        private Double availableFunds;
+
+        public Builder id(Long id){
+            this.id = id;
+            return this;
+        }
+
+        public Builder customerId(Long customerId){
+            this.customerId = customerId;
+            return this;
+        }
+
+        public Builder nrb(String nrb){
+            this.nrb = nrb;
+            return this;
+        }
+
+        public Builder currency(String currency){
+            this.currency = currency;
+            return this;
+        }
+
+        public Builder availableFunds(Double availableFunds){
+            this.availableFunds = availableFunds;
+            return this;
+        }
+    }
 }
