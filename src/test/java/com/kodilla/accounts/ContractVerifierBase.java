@@ -37,10 +37,9 @@ public class ContractVerifierBase {
                                 .customerId(95213L)
                                 .nrb("08897810189710581776778244")
                                 .currency("PLN")
-                                .customerId(1L)
                                 .build()
 
-       /*               new Account.Builder()   Zastosowałem wzorzec Buildera w Account lecz chyba nie o to chodziło
+       /*               new Account.Builder()   Zastosowałem wzorzec Buildera w Account, lecz chyba nie o to chodziło
                                 .id(95213L)
                                 .customerId(95213L)
                                 .nrb("08897810189710581776778244")
